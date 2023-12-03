@@ -1,0 +1,44 @@
+- defaults:
+  links:
+    relink: true
+
+- clean: ['~']
+
+- link:
+  ~/.zshrc:
+    path: ./source/zshrc
+
+- create: {}
+
+- shell: {}
+
+- asdf:
+  - plugin: python
+    url: https://github.com/tuvistavie/asdf-python.git
+    global: 3.7.4
+    versions:
+      - 3.7.4
+  - plugin: nodejs
+    url: https://github.com/asdf-vm/asdf-nodejs.git
+    global: 12.10
+    versions:
+      - 12.10
+  - plugin: ruby
+    url: https://github.com/asdf-vm/asdf-ruby.git
+    global: 2.6.4
+    versions:
+      - 2.6.4
+
+- template:
+    - ~/.gitconfig:
+        source_file: ./source/gitconfig
+        params:
+          NAME: Jonathan Farber
+          EMAIL: 84645149+Forty-SixNTwo@users.noreply.github.com 
+          GITHUB_USERNAME: Forty-SixNTwo
+          SMTP_SERVER: smtp.gmail.com
+          SMTP_PORT: 587
+          SMTP_ENCRYPTION: tls
+          __UNAME__:
+            CREDENTIAL_HELPER:
+              Darwin: osxkeychain

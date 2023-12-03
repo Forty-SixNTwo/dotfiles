@@ -1,0 +1,1 @@
+#!/usr/bun/env zsh
