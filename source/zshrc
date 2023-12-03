@@ -1,0 +1,21 @@
+# Variables
+export DOTFILES="$HOME/.dotfiles"
+
+# Aliases
+
+# Paths 
+typeset -U path
+
+path=(
+	"$N_PREFEIX/bin"
+	$path
+)
+
+# Functions
+
+function mkcd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# Load "New" Completion System
+autoload -Uz compinit && compinit
