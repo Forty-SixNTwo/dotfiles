@@ -1,19 +1,22 @@
 - defaults:
-  links:
-    relink: true
+    link:
+      relink: true
 
 - clean: ['~']
 
 - link:
-  ~/.zshrc:
-    path: ./source/zshrc
-  ~/.gitconfig:
-    path: ./source/gitconfig
-
-- create: {}
+    ~/.zshrc:
+      path: ./source/zshrc
+    ~/.gitconfig:
+      path: ./source/gitconfig
 
 - shell:
-  - command: ./bin/homebrew/install.sh
-    stdout: true
-    stderr: true
-    when: "not os.path.exists('/usr/local/bin/brew')"
+    - command: ./bin/homebrew/install.zsh
+      stdout: true
+      stderr: true
+    - command: ./bin/macos/install.zsh
+      stdout: true
+      stderr: true
+    - command: ./bin/starship/install.zsh
+      stdout: true
+      stderr: true
