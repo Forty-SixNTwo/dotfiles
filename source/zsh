@@ -1,0 +1,61 @@
+# Variables
+export DOTFILES="$HOME/.dotfiles"
+export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
+export N_PREFIX="$HOME/.n"
+export PREFIX="$N_PREFIX"
+
+# Adjust History Variables & Options
+[[ -z $HISTFILE ]] && HISTFILE="$HOME/.zsh_history"
+HISTSIZE=5000 # Session Memory Limit
+SAVEHIST=4000 # File Memory Limit
+setopt histNoStore
+setopt extendedHistory
+setopt histIgnoreAllDups
+unsetopt appendHistory # explicit and unnecessary
+setopt incAppendHistoryTime
+
+# Line Editor Options (Completion, Menu, Directory, etc.)
+# autoMenu & autoList are on by default
+setopt autoCd
+setopt globDots
+
+
+# Create Aliases
+alias ls='exa'
+alias exa='exa -laFh --git'
+alias trail='<<<${(F)path}'
+alias ftrail='<<<${(F)fpath}'
+alias rm=trash
+alias man=batman
+alias bbd="brew bundle dump --force --describe"
+alias lh='fc -RI; echo "loaded and showing..."; history;' # Load history into shell (shareHistory alternative)
+
+# Paths 
+typeset -U path
+
+path=(
+  "$N_PREFIX/bin"
+  $path
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+)
+
+# Functions
+function mkcd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# ZSH Plugins
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# Key Bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Load "New" Completion System
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':plugin:history-search-multi-word' clear-on-cancel 'yes'
+autoload -Uz compinit && compinit
+
+# prompt(s)
+eval "$(starship init zsh)"

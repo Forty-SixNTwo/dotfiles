@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+EXTENSIONS=$HOME/.dotfiles/bin/homebrew/vscode_extensions
+BREWFILE=$HOME/.dotfiles/bin/homebrew/Brewfile
+
 # Install homebrew if not installed already
 if exists brew; then
   echo "brew exists, skipping install"
@@ -9,14 +12,14 @@ else
 fi
 
 # Install all packages in Brewfile
-brew bundle --verbose --file=$HOME/.dotfiles/bin/homebrew/Brewfile
+brew bundle --verbose --file=$BREWFILE
 
 # Set Root permissions
 sudo xcodebuild -license accept
 sudo xcodebuild -runFirstLaunch
 
 # Install VSCode extensions
-cat $HOME/.dotfiles/bin/homebrew/vscode_extensions | xargs -L 1 code --install-extension
+cat $EXTENSIONS | xargs -L 1 code --install-extension
 
 # Set permissions
 chmod -R go-w "$(brew --prefix)/share"

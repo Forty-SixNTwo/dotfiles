@@ -6,9 +6,18 @@
 
 - link:
     ~/.zshrc:
-      path: ./source/zshrc
+      path: ./source/zsh
     ~/.gitconfig:
-      path: ./source/gitconfig
+      path: ./source/git
+    ~/.hyper.js:
+      path: ./source/hyper
+    ~/.nanorc:
+      path: ./source/nano
+    ~/.mackup.cfg:
+      path: ./source/mackup
+    ~/.config/bat:
+      create: true
+      path: ./source/bat
 
 - shell:
     - command: ./bin/homebrew/install.zsh
@@ -18,5 +27,8 @@
       stdout: true
       stderr: true
     - command: ./bin/starship/install.zsh
+      stdout: true
+      stderr: true
+    - command: ./bin/node/install.zsh
       stdout: true
       stderr: true
