@@ -6,19 +6,19 @@ export PREFIX="$N_PREFIX"
 
 # Adjust History Variables & Options
 [[ -z $HISTFILE ]] && HISTFILE="$HOME/.zsh_history"
-HISTSIZE=5000 # Session Memory Limit
-SAVEHIST=4000 # File Memory Limit
+HISTSIZE=5000 
+SAVEHIST=4000
+unsetopt appendHistory
 setopt histNoStore
 setopt extendedHistory
 setopt histIgnoreAllDups
-unsetopt appendHistory # explicit and unnecessary
 setopt incAppendHistoryTime
-
-# Line Editor Options (Completion, Menu, Directory, etc.)
-# autoMenu & autoList are on by default
 setopt autoCd
 setopt globDots
-
+setopt extendedGlob
+setopt nohup
+setopt notify
+setopt correct
 
 # Create Aliases
 alias ls='exa'
@@ -28,7 +28,7 @@ alias ftrail='<<<${(F)fpath}'
 alias rm=trash
 alias man=batman
 alias bbd="brew bundle dump --force --describe"
-alias lh='fc -RI; echo "loaded and showing..."; history;' # Load history into shell (shareHistory alternative)
+alias lh='fc -RI; echo "loaded and showing..."; history;'
 
 # Paths 
 typeset -U path
@@ -46,10 +46,6 @@ function mkcd() {
 
 # ZSH Plugins
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
-# Key Bindings
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 # Load "New" Completion System
 zstyle ':completion:*:*:*:*:*' menu select

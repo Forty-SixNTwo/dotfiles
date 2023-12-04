@@ -18,6 +18,9 @@ brew bundle --verbose --file=$BREWFILE
 sudo xcodebuild -license accept
 sudo xcodebuild -runFirstLaunch
 
+# Install Starship
+curl -sS https://starship.rs/install.sh | sh
+
 # Install VSCode extensions
 cat $EXTENSIONS | xargs -L 1 code --install-extension
 

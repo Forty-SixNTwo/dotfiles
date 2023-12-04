@@ -14,7 +14,7 @@
     ~/.nanorc:
       path: ./source/nano
     ~/.mackup.cfg:
-      path: ./source/mackup
+      path: ./source/macup
     ~/.config/bat:
       create: true
       path: ./source/bat
@@ -26,9 +26,9 @@
     - command: ./bin/macos/install.zsh
       stdout: true
       stderr: true
-    - command: ./bin/starship/install.zsh
+    - command: ./bin/node/install.zsh
       stdout: true
       stderr: true
-    - command: ./bin/node/install.zsh
+    - command: ./bin/zsh/install.zsh
       stdout: true
       stderr: true
