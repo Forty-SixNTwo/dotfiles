@@ -17,10 +17,7 @@
 
 - [asdf](https://github.com/asdf-vm/asdf) extendable version manager
 - [Homebrew](https://brew.sh) package manager
-- [Hammerspon](https://www.hammerspoon.org) OS automation
-- [karabiner](https://karabiner-elements.pqrs.org/) keyboard customization
 - [Yabai](https://github.com/koekeishiya/yabai) tiling windows manager
-- [Übersicht](https://github.com/felixhageloh/uebersicht) desktop widgets
 - [skhd](https://github.com/koekeishiya/skhd) HotKey daemon
 - [spacebar](https://github.com/cmacrae/spacebar) minimal status bar
 

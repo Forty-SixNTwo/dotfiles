@@ -1,10 +1,16 @@
 #!/usr/bin/env zsh
 
+##  '########::'######::'##::::'##:
+##  ..... ##::'##... ##: ##:::: ##:
+##  :::: ##::: ##:::..:: ##:::: ##:
+##  ::: ##::::. ######:: #########:
+##  :: ##::::::..... ##: ##.... ##:
+##  : ##::::::'##::: ##: ##:::: ##:
+##   ########:. ######:: ##:::: ##:
+##  ........:::......:::..:::::..::
+
 echo "\n<<< Starting ZSH Setup >>>\n"
 
-# Installation unnecessary; it's in the Brewfile.
-
-# https://stackoverflow.com/a/4749368/1341838
 if grep -Fxq '/usr/local/bin/zsh' '/etc/shells'; then
   echo '/usr/local/bin/zsh already exists in /etc/shells'
 else
@@ -25,9 +31,11 @@ if sh --version | grep -q zsh; then
   echo '/private/var/select/sh already linked to /bin/zsh'
 else
   echo "Enter superuser (sudo) password to symlink sh to zsh"
-  # Looked cute, might delete later, idk
   sudo ln -sfv /bin/zsh /private/var/select/sh
-
-  # I'd like for this to work instead.
-  # sudo ln -sfv /usr/local/bin/zsh /private/var/select/sh
 fi
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

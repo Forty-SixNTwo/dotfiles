@@ -1,0 +1,84 @@
+##  '########::'######::'##::::'##:'########:::'######::
+##  ..... ##::'##... ##: ##:::: ##: ##.... ##:'##... ##:
+##  :::: ##::: ##:::..:: ##:::: ##: ##:::: ##: ##:::..::
+##  ::: ##::::. ######:: #########: ########:: ##:::::::
+##  :: ##::::::..... ##: ##.... ##: ##.. ##::: ##:::::::
+##  : ##::::::'##::: ##: ##:::: ##: ##::. ##:: ##::: ##:
+##   ########:. ######:: ##:::: ##: ##:::. ##:. ######::
+##  ........:::......:::..:::::..::..:::::..:::......:::
+
+# Variables
+export HISTSIZE=5000 
+export SAVEHIST=4000
+export PREFIX="$N_PREFIX"
+export N_PREFIX="$HOME/.n"
+export ZSH="$HOME/.oh-my-zsh"
+export HISTTIMEFORMAT="[%F %T] "
+export DOTFILES="$HOME/.dotfiles"
+export HISTFILE="$HOME/.zsh_history"
+export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
+
+# Oh My ZSH
+ZSH_THEME="dracula-pro"
+
+plugins=(
+  asdf
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Adjust History Variables & Options
+unsetopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_NO_STORE
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt AUTO_CD
+setopt GLOB_DOTS
+setopt EXTENDED_GLOB
+setopt NO_HUP
+setopt NOTIFY
+setopt CORRECT
+
+# Create Aliases
+alias ls='eza'
+alias eza='eza -laFh --git'
+alias trail='<<<${(F)path}'
+alias ftrail='<<<${(F)fpath}'
+alias rm=trash
+alias man=batman
+alias bbd="brew bundle dump --force --describe"
+alias lh='fc -RI; echo "loaded and showing..."; history;'
+
+# Paths 
+typeset -U path
+
+path=(
+  "$N_PREFIX/bin"
+  $path
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+)
+
+# Functions
+function mkcd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# ZSH Plugins
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# Load "New" Completion System
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':plugin:history-search-multi-word' clear-on-cancel 'yes'
+autoload -Uz compinit && compinit
+
+# prompt(s)
+eval "$(starship init zsh)"
+eval $(thefuck --alias)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
