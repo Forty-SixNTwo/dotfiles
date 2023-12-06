@@ -9,41 +9,70 @@
 ##   ##:::: ##:. #######:: ##:::: ##: ########: ########:: ##:::. ##: ########:. ###. ###::
 ##  ..:::::..:::.......:::..:::::..::........::........:::..:::::..::........:::...::...:::
 
+ASDF=$HOME/.asdf
 EXTENSIONS=$HOME/.dotfiles/bin/homebrew/vscode_extensions
 BREWFILE=$HOME/.dotfiles/bin/homebrew/Brewfile
 
-# Install homebrew if not installed already
-if command -v brew >/dev/null 2>&1; then
-  echo "brew exists, skipping install"
-else
-  echo "brew doesn't exist, continuing with install"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+while true; do
 
-# Install all packages in Brewfile
-brew bundle --verbose --file=$BREWFILE
+    echo "Preparing to install Homebrew packages, would you like to proceed (y/n)?"
 
-# Fuzzy finder completions
-$(brew --prefix)/opt/fzf/install
+    read choice
 
-# Set Root permissions
-sudo xcodebuild -license accept
-sudo xcodebuild -runFirstLaunch
+    case $choice in
+        y)
+            echo "Starting homebrew installation."
+            
+            if command -v brew >/dev/null 2>&1; then
+                echo "brew exists, skipping install"
+            else
+                echo "brew doesn't exist, continuing with install"
+                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            fi
 
-# Install asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+            # Install all packages in Brewfile
+            brew bundle --verbose --file=$BREWFILE
 
-# Install starship
-curl -sS https://starship.rs/install.sh | /bin/bash
+            # Fuzzy finder completions
+            $(brew --prefix)/opt/fzf/install
 
-# Install VSCode extensions
-cat $EXTENSIONS | xargs -L 1 code --install-extension
+            # Set Root permissions
+            sudo xcodebuild -license accept
+            sudo xcodebuild -runFirstLaunch
 
-# Set permissions
-chmod -R go-w "$(brew --prefix)/share"
+            # Install asdf
+            if [[ -d $ASDF ]]; then
+                echo "asdf is allready installed at $ASDF"
+            else
+                echo "Installing asdf to $ASDF"
+                git clone https://github.com/asdf-vm/asdf.git $ASDF
+            fi
 
-# spacebar
-brew services start spacebar
+            # Install VSCode extensions
+            cat $EXTENSIONS | xargs -L 1 code --install-extension
 
-# Update upgrade and cleanup
-brew update && brew upgrade && brew cleanup
+            # Set permissions
+            chmod -R go-w "$(brew --prefix)/share"
+
+            # spacebar
+            brew services start spacebar
+
+            # Update
+            brew update --verbose
+
+            # Upgrade
+            brew upgrade --verbose
+
+            # Cleanup
+            brew cleanup --verbose
+            break
+            ;;
+        n)
+            echo "Skipping Homebrew installation."
+            exit 0
+            ;;
+        *)
+            echo "Invalid input. Please enter 'y' or 'n'."
+            ;;
+    esac
+done

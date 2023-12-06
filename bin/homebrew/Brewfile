@@ -6,6 +6,8 @@
 ##   ##:::: ##: ##::. ##:: ##::::::: ##: ##: ##: ##:::::::: ##:: ##::::::: ##:::::::
 ##   ########:: ##:::. ##: ########:. ###. ###:: ##:::::::'####: ########: ########:
 ##  ........:::..:::::..::........:::...::...:::..::::::::....::........::........::
+####################################################################################
+# Homebrew Bundles
 tap "eth-p/software"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -13,6 +15,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "corgibytes/cask-fonts"
+
+# Homebrew Packages
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Modern replacement for 'ls'
@@ -51,12 +55,8 @@ brew "less"
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
-# Node version management
-brew "n"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
-# JavaScript package manager
-brew "pnpm"
 # UNIX shell (command interpreter)
 brew "zsh"
 #
@@ -69,8 +69,30 @@ brew "cmacrae/formulae/spacebar"
 brew "figlet"
 #
 brew "toilet"
+#
+brew "gpg"
+#
+brew "gmp"
+#
+brew "gawk"
+#
+brew "readline"
+#
+brew "ncurses"
+#
+brew "zlib"
 # Bash scripts that integrate bat with various command-line tools
 brew "eth-p/software/bat-extras"
+#
+brew "java"
+#
+brew "ruby"
+#
+brew "python"
+#
+brew "rust"
+
+# Applications
 cask "alfred"
 cask "dropbox"
 cask "gitkraken"

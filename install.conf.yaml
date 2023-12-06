@@ -33,12 +33,24 @@
     - command: ./bin/homebrew/install.zsh
       stdout: true
       stderr: true
+      stdin: true
     - command: ./bin/macos/install.zsh
       stdout: true
       stderr: true
-    - command: ./bin/node/install.zsh
-      stdout: true
-      stderr: true
+      stdin: true
     - command: ./bin/zsh/install.zsh
       stdout: true
       stderr: true
+      stdin: true
+    - command: ./bin/languages/install.zsh
+      stdout: true
+      stderr: true
+      stdin: true
+    - command: ./bin/starship/install.zsh
+      stdout: true
+      stderr: true
+      stdin: true
+    - command: ./bin/themes/install.zsh
+      stdout: true
+      stderr: true
+      stdin: true
