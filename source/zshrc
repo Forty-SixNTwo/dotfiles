@@ -6,11 +6,12 @@
 ##  : ##::::::'##::: ##: ##:::: ##: ##::. ##:: ##::: ##:
 ##   ########:. ######:: ##:::: ##: ##:::. ##:. ######::
 ##  ........:::......:::..:::::..::..:::::..:::......:::
+##  ####################################################
 
 # Variables
 export DOTFILES="$HOME/.dotfiles"
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
-export HIGHLIGHTING=./bin/zsh/syntax-highlighting.sh
+export HIGHLIGHTING=$HOME/.dotfiles/bin/zsh/syntax-highlighting.zsh
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=5000 

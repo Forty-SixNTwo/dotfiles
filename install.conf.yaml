@@ -8,26 +8,26 @@
     ~/.zshrc:
       path: ./source/zshrc
     ~/.gitconfig:
-      path: ./source/git.cfg
+      path: ./source/gitconfig
     ~/.hyper.js:
-      path: ./source/hyper.js
+      path: ./source/hyper
     ~/.nanorc:
       path: ./source/nanorc
     ~/.mackup.cfg:
-      path: ./source/mackup.cfg
+      path: ./source/mackup
     ~/.config/bat:
       create: true
-      path: ./source/bat.cfg
+      path: ./source/bat
     ~/.config/spacebar/spacebarrc:
       create: true
       execute: true
-      path: ./source/spacebar
+      path: ./source/spacebarrc
     ~/.yabairc:
       execute: true
       path: ./source/yabairc
     ~/.config/starship.toml:
       create: true
-      path: ./source/starship.toml
+      path: ./source/starship
 
 - shell:
     - command: ./bin/homebrew/install.zsh

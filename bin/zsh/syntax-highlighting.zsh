@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Dracula Theme (for zsh-syntax-highlighting)
 #
 # https://github.com/zenorocha/dracula-theme

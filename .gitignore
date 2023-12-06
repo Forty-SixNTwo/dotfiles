@@ -1,6 +1,9 @@
 ### Homebrew ###
 Brewfile.lock.json
 
+### VSCode ###
+/.vscode
+
 ### macOS ###
 # General
 .DS_Store
