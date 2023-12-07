@@ -6,7 +6,7 @@
 ##   ##:::: ##: ##::. ##:: ##::::::: ##: ##: ##: ##:::::::: ##:: ##::::::: ##:::::::
 ##   ########:: ##:::. ##: ########:. ###. ###:: ##:::::::'####: ########: ########:
 ##  ........:::..:::::..::........:::...::...:::..::::::::....::........::........::
-####################################################################################
+##  ################################################################################
 
 # Homebrew Bundles
 # ----------------
@@ -16,6 +16,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "corgibytes/cask-fonts"
+tap "dracula/install"
 
 # Homebrew Packages
 # -----------------
@@ -92,6 +93,8 @@ cask "iterm2"
 cask "visual-studio-code"
 # Media player
 cask "vlc"
+# Dracula themed wallpapers
+brew "dracula/install/dracula-git"
 
 # Fonts
 # -----

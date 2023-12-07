@@ -11,8 +11,8 @@
 module.exports = {
   config: {
     updateChannel: 'stable',
-    fontSize: 25,
-    fontFamily: '"Fira Code", monospace',
+    fontSize: 16,
+    fontFamily: 'Cascadia Code, monospace',
     fontWeight: 'normal',
     fontWeightBold: 'bold',
     lineHeight: 1,
@@ -59,7 +59,8 @@ module.exports = {
     webGLRenderer: true,
   },
   plugins: [
-    'hyperborder'
+    'hyperborder',
+    'hyper-dracula'
   ],
   localPlugins: [],
   keymaps: {}
