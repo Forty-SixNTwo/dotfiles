@@ -8,9 +8,8 @@
 ##   ##:::: ##: ##:::: ##: ##:.:: ##: ##::::::: ##:::: ##: ##::. ##:: ##::::::: ##: ##: ##:
 ##   ##:::: ##:. #######:: ##:::: ##: ########: ########:: ##:::. ##: ########:. ###. ###::
 ##  ..:::::..:::.......:::..:::::..::........::........:::..:::::..::........:::...::...:::
-###########################################################################################
+##  #######################################################################################
 
-ASDF=$HOME/.asdf
 EXTENSIONS=$HOME/.dotfiles/bin/homebrew/vscode_extensions
 BREWFILE=$HOME/.dotfiles/bin/homebrew/Brewfile
 
@@ -33,21 +32,10 @@ while true; do
 			# Install all packages in Brewfile
 			brew bundle --verbose --file=$BREWFILE
 
-			# Fuzzy finder completions
-			$(brew --prefix)/opt/fzf/install
-
 			# Set Root permissions
 			sudo xcodebuild -license accept
 			sudo xcodebuild -runFirstLaunch
 
-			# Install asdf
-			if [[ -d $ASDF ]]; then
-				echo "asdf is allready installed at $ASDF"
-			else
-				echo "Installing asdf to $ASDF"
-				git clone https://github.com/asdf-vm/asdf.git $ASDF
-			fi
-			
 			# Install VSCode extensions
 			cat $EXTENSIONS | xargs -L 1 code --install-extension
 

@@ -9,6 +9,7 @@
 ##	::: ##:::: ##:::: ##: ########: ##:::: ##: ########:. ######::
 ##	:::..:::::..:::::..::........::..:::::..::........:::......:::
 ##  ##############################################################
+
 THEMES="$HOME/.themes"
 OH_MY_ZSH="$HOME/.oh-my-zsh"
 
@@ -52,6 +53,18 @@ while true; do
 		git clone https://github.com/dracula/midnight-commander.git $THEMES/midnight-commander
 		ln -s $THEMES/midnight-commander/skins/dracula.ini $HOME/.local/share/mc/skins
 		ln -s $THEMES/midnight-commander/skins/dracula256.ini $HOME/.local/share/mc/skins
+
+		# colorls
+		curl -sS https://raw.githubusercontent.com/dracula/colorls/master/dark_colors.yaml -o $THEMES/dark_colors.yaml
+		mv $HOME/.config/colorls/dark_colors.yaml $HOME/.config/colorls/dark_colors.yaml.backup
+		ln -s $THEMES/dark_colors.yaml $HOME/.config/colorls/dark_colors.yaml
+		
+		# CotEditor
+		curl -sS https://raw.githubusercontent.com/dracula/coteditor/master/Dracula.cottheme -o $THEMES/Dracula.cottheme
+
+		# fig
+		fig theme dracula
+		#
 		break
 		;;
 	n)

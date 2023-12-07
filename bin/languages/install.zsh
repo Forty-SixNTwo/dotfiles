@@ -11,6 +11,8 @@
 ##  ###############################################################################################
 
 NODE=$HOME/.dotfiles/bin/languages/node.zsh
+RUBY=$HOME/.dotfiles/bin/languages/ruby.zsh
+PYTHON=$HOME/.dotfiles/bin/languages/python.zsh
 
 while true; do
 
@@ -79,9 +81,13 @@ while true; do
         if [[ -z "$version" ]]; then
           asdf install ruby latest
           asdf global ruby latest
+          sudo chown -R $USER /Library/Ruby/Gems/
+          source $RUBY
         else
           asdf install ruby $version
           asdf global ruby $version
+          sudo chown -R $USER /Library/Ruby/Gems/
+          source $RUBY
         fi
       fi
 
@@ -142,9 +148,11 @@ while true; do
         if [[ -z "$version" ]]; then
           asdf install python latest
           asdf global python latest
+          source $PYTHON
         else
           asdf install python $version
           asdf global python $version
+          source $PYTHON
         fi
       fi
       break

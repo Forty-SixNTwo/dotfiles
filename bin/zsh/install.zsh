@@ -10,7 +10,9 @@
 ##  ........:::......:::..:::::..::
 ###################################
 
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+ASDF=$HOME/.asdf
+OH_MY_ZSH=$HOME/.oh-my-zsh
+OH_MY_ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
 while true; do
 
@@ -43,11 +45,49 @@ while true; do
         sudo ln -sfv /bin/zsh /private/var/select/sh
       fi
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      if [[ -d $OH_MY_ZSH ]]; then
+        echo "oh-my-zsh already installed"
+      else
+        echo "Installing oh-my-zsh"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      fi
 
-      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+      if [[ -d $OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]]; then
+        echo "zsh-syntax-highlighting already installed"
+      else
+        echo "Installing zsh-syntax-highlighting"
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+      fi
+      
+      if [[ -d $OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions ]]; then
+        echo "zsh-autosuggestions already installed"
+      else
+        echo "Installing zsh-autosuggestions"
+        git clone https://github.com/zsh-users/zsh-autosuggestions $OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions
+      fi
 
-      git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+      if [[ -d $ASDF ]]; then
+        echo "asdf is allready installed at $ASDF"
+      else
+        echo "Installing asdf to $ASDF"
+        git clone https://github.com/asdf-vm/asdf.git $ASDF
+      fi
+      
+      if [[ -d "$HOME/.fzf.zsh" ]]; then
+        echo "fzf completions already installed"
+      else
+        echo "Installing fzf completions"
+        $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+      fi
+
+      if [[ -d "$HOME/bashtop" ]]; then
+        echo "bashtop already installed"
+      else
+        git clone https://github.com/aristocratos/bashtop.git $HOME/bashtop
+        cd $HOME/bashtop
+        sudo make install
+        cd "${pwd}"
+      fi
 
       break
       ;;

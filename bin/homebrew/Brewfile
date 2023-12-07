@@ -73,6 +73,16 @@ brew "cmacrae/formulae/spacebar"
 brew "figlet"
 # ASCII text art
 brew "toilet"
+# Shell 
+brew "bash" 
+# Utilities
+brew "coreutils" 
+# 
+brew "gnu-sed" 
+# 
+brew "osx-cpu-temp"
+# Dracula themed wallpapers
+brew "dracula/install/dracula-git"
 
 # Applications
 # ------------
@@ -93,8 +103,16 @@ cask "iterm2"
 cask "visual-studio-code"
 # Media player
 cask "vlc"
-# Dracula themed wallpapers
-brew "dracula/install/dracula-git"
+# gitkraken theme
+cask "dracula-gitkraken"
+# alfred theme
+cask "dracula-alfred"
+# color picker theme
+cask "dracula-macos-color-picker"
+# xcode theme
+cask "dracula-xcode"
+#
+cask "fig"
 
 # Fonts
 # -----

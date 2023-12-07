@@ -12,7 +12,7 @@ module.exports = {
   config: {
     updateChannel: 'stable',
     fontSize: 16,
-    fontFamily: 'Cascadia Code, monospace',
+    fontFamily: '"Hack Nerd Font","Cascadia Code", monospace',
     fontWeight: 'normal',
     fontWeightBold: 'bold',
     lineHeight: 1,
