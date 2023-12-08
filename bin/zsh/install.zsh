@@ -80,11 +80,11 @@ while true; do
         $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
       fi
 
-      if [[ -d "$HOME/bashtop" ]]; then
+      if [[ -d "$HOME/.bashtop" ]]; then
         echo "bashtop already installed"
       else
-        git clone https://github.com/aristocratos/bashtop.git $HOME/bashtop
-        cd $HOME/bashtop
+        git clone https://github.com/aristocratos/bashtop.git $HOME/.bashtop
+        cd $HOME/.bashtop
         sudo make install
         cd "${pwd}"
       fi

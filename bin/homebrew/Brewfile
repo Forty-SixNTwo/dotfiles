@@ -77,12 +77,14 @@ brew "toilet"
 brew "bash" 
 # Utilities
 brew "coreutils" 
-# 
+# non-interactive command-line text editor
 brew "gnu-sed" 
-# 
+# Outputs current CPU temperature
 brew "osx-cpu-temp"
 # Dracula themed wallpapers
 brew "dracula/install/dracula-git"
+# set macOS file icons programatically
+brew "fileicon"
 
 # Applications
 # ------------
@@ -111,8 +113,7 @@ cask "dracula-alfred"
 cask "dracula-macos-color-picker"
 # xcode theme
 cask "dracula-xcode"
-#
-cask "fig"
+
 
 # Fonts
 # -----

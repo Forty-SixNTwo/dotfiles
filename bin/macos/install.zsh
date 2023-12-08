@@ -10,6 +10,8 @@
 ##  ..:::::..::..:::::..:::......::::.......::::......:::
 ##  #####################################################
 
+WORK_DIR=$HOME/work
+
 while true; do
 
     echo "Preparing to setup macOS, would you like to proceed (y/n)?"
@@ -46,6 +48,13 @@ while true; do
             defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
             defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iterm2"
             defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+
+            if [[ -d $WORK_DIR ]]; then
+                echo "Work directory already exists."
+            else
+                echo "Creating work directory."
+                mkdir -p $WORK_DIR
+            fi
 
             # Finish macOS Setup
             killall Finder

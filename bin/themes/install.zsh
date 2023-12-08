@@ -21,6 +21,7 @@ while true; do
   case $choice in
   	y)
 		echo "Starting themes installation."
+
 		if [[ -d $THEMES ]]; then
 			echo "Themes directory already exists."
 			if [[ -d "$THEMES/lib" ]]; then
@@ -51,8 +52,8 @@ while true; do
 
 		# Midnight Commander
 		git clone https://github.com/dracula/midnight-commander.git $THEMES/midnight-commander
-		ln -s $THEMES/midnight-commander/skins/dracula.ini $HOME/.local/share/mc/skins
-		ln -s $THEMES/midnight-commander/skins/dracula256.ini $HOME/.local/share/mc/skins
+		ln -s $THEMES/midnight-commander/skins/dracula.ini $HOME/.local/share/mc/skins/dracula.ini
+		ln -s $THEMES/midnight-commander/skins/dracula256.ini $HOME/.local/share/mc/skins/dracula256.ini
 
 		# colorls
 		curl -sS https://raw.githubusercontent.com/dracula/colorls/master/dark_colors.yaml -o $THEMES/dark_colors.yaml
@@ -62,9 +63,10 @@ while true; do
 		# CotEditor
 		curl -sS https://raw.githubusercontent.com/dracula/coteditor/master/Dracula.cottheme -o $THEMES/Dracula.cottheme
 
-		# fig
-		fig theme dracula
-		#
+		# file icons
+		
+		# curl https://github.com/othyn/github-folder-icon-macOS/raw/main/icons/13.0%20-%20Ventura/dark/icon.icns -o $THEMES/icons/github/icon.icns
+		# fileicon set $HOME/github.com $THEMES/github.icns
 		break
 		;;
 	n)

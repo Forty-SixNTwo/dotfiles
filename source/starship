@@ -7,29 +7,95 @@
 ##  . ######::::: ##:::: ##:::: ##: ##:::. ##:. ######:: ##:::: ##:'####: ##::::::::
 ##  :......::::::..:::::..:::::..::..:::::..:::......:::..:::::..::....::..:::::::::
 ##  ################################################################################
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[aws]
-style = "bold #ffb86c"
+add_newline = true
+
+format = """$time $all"""
 
 [character]
 error_symbol = "[λ](bold #ff5555)"
 success_symbol = "[λ](bold #50fa7b)"
 
-[cmd_duration]
-style = "bold #f1fa8c"
-
-[directory]
-style = "bold #50fa7b"
-
-[git_branch]
-style = "bold #ff79c6"
-
-[git_status]
-style = "bold #ff5555"
+format = """
+[](bold #50fa7b)$directory$git_branch$git_status
+[λ](bold #50fa7b) """
 
 [hostname]
 style = "bold #bd93f9"
 
 [username]
-format = "[$user]($style) on "
+disabled = false
+format = " [$user]($style) ~ "
 style_user = "bold #8be9fd"
+
+[cmd_duration]
+format = "took [$duration](bold #f1fa8c)"
+min_time = 500
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = "🔒"
+read_only_style = " #f1fa8c"
+style = "bold #50fa7b"
+
+[git_branch]
+format = "on [$symbol $branch ]($style)"
+style = "bold #ff79c6"
+symbol = " "
+
+[git_commit]
+style = "bold #ff79c6"
+
+[git_status]
+ahead = "⇡${count} "
+behind = "⇣${count} "
+conflicted = "="
+deleted = "✘${count} "
+disabled = false
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+format = '([\[$all_status$ahead_behind\]]($style))'
+modified = "!${count} "
+renamed = "»${count} "
+staged = "+${count} "
+stashed = "$${count} "
+style = "bold #ff5555"
+untracked = "?${count} "
+
+[git_state]
+am = "AM"
+am_or_rebase = "AM/REBASE"
+bisect = "BISECTING"
+cherry_pick = "CHERRY-PICKING"
+disabled = false
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+merge = "MERGING"
+rebase = "REBASING"
+revert = "REVERTING"
+style = "bold #f1fa8c"
+
+[hg_branch]
+format = "on [$symbol$branch]($style) "
+style = "bold #ff79c6"
+symbol = " "
+
+[memory_usage]
+format = "via $symbol [${ram}( | ${ram_pct})]($style)"
+style = "bold dimmed #50fa7b"
+symbol = " "
+
+[nodejs]
+disabled = false
+format = "via [$symbol$version]($style) "
+not_capable_style = "bold #f1fa8c"
+style = "bold #50fa7b"
+symbol = "⬢ "
+
+[status]
+disabled = true
+format = "[$symbol$status]($style)"
+style = "bold #f1fa8c"
+symbol = "✖"
+
+[aws]
+style = "bold #ffb86c"
