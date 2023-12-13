@@ -10,11 +10,9 @@
 ##   ..::::..:::.......:::........:::........::...:::......::::......::
 ##  ###################################################################
 
-# Install Global NPM Packages
 npm i -g typescript
 npm i -g trash-cli
 npm i -g pnpm 
-
-echo "Global NPM Packages Installed:"
-
+npm i -g serverless
 npm list --global --depth=0
+echo "Global NPM Packages Installed:"

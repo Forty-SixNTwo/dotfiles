@@ -93,6 +93,8 @@ brew "fileicon"
 cask "alfred"
 # Cloud storage
 cask "dropbox"
+# Docker
+cask "docker"
 # Git client 
 cask "gitkraken"
 # Web browser
@@ -113,7 +115,8 @@ cask "dracula-alfred"
 cask "dracula-macos-color-picker"
 # xcode theme
 cask "dracula-xcode"
-
+# Github next Monaspace font
+cask "font-monaspace"
 
 # Fonts
 # -----

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 ##  '########::'######::'##::::'##:'########:::'######::
 ##  ..... ##::'##... ##: ##:::: ##: ##.... ##:'##... ##:
 ##  :::: ##::: ##:::..:: ##:::: ##: ##:::: ##: ##:::..::
@@ -34,6 +36,8 @@ plugins=(
 source $ZSH_SH
 source $ZSH_SYNTAX_HIGHLIGHTING
 source $(dirname $(gem which colorls))/tab_complete.sh
+. "$HOME/.asdf/plugins/java/set-java-home.zsh"
+. "$HOME/.cargo/env"
 
 # Adjust History Variables & Options
 unsetopt APPEND_HISTORY
@@ -66,6 +70,7 @@ typeset -U path
 path=(
   $path
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  "/Users/fortysix-ntwo/Library/Python/3.9/bin"
 )
 
 # Functions

@@ -14,60 +14,60 @@ WORK_DIR=$HOME/work
 
 while true; do
 
-    echo "Preparing to setup macOS, would you like to proceed (y/n)?"
+	echo "Preparing to setup macOS, would you like to proceed (y/n)?"
 
-    read choice
+  read choice
 
-    case $choice in
-        y)
-            echo "Starting macOS Setup."
+  case $choice in
+		y)
+			echo "Starting macOS Setup."
 
-            osascript -e 'tell application "System Preferences" to quit'
+			osascript -e 'tell application "System Preferences" to quit'
 
-            # Finder > View > Show Path Bar
-            defaults write com.apple.finder ShowPathbar -bool true
+			# Finder > View > Show Path Bar
+			defaults write com.apple.finder ShowPathbar -bool true
 
-            # Finder > Preferences > General > New Finder windows show:
-            defaults write com.apple.finder NewWindowTarget -string 'PfLo'
-            defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/.dotfiles"
+			# Finder > Preferences > General > New Finder windows show:
+			defaults write com.apple.finder NewWindowTarget -string 'PfLo'
+			defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/.dotfiles"
 
-            # System Preferences > Dock
-            defaults write com.apple.dock magnification -bool true
-            defaults write com.apple.dock tilesize -int 45
-            defaults write com.apple.dock largesize -int 60
-            defaults write com.apple.dock autohide -bool true
-            defaults write com.apple.dock autohide-time-modifier -float 0.25
-            defaults write com.apple.dock autohide-delay -float 0.1
+			# System Preferences > Dock
+			defaults write com.apple.dock magnification -bool true
+			defaults write com.apple.dock tilesize -int 45
+			defaults write com.apple.dock largesize -int 60
+			defaults write com.apple.dock autohide -bool true
+			defaults write com.apple.dock autohide-time-modifier -float 0.25
+			defaults write com.apple.dock autohide-delay -float 0.1
 
-            # System Preferences > Accessibility > Pointer Control > Mouse & Trackpad > Trackpad Options > Enable Dragging > Three Finger Drag (NOTE: The GUI doesn't update)
-            defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+			# System Preferences > Accessibility > Pointer Control > Mouse & Trackpad > Trackpad Options > Enable Dragging > Three Finger Drag (NOTE: The GUI doesn't update)
+			defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 
-            # Third-Party Software
+			# Third-Party Software
 
-            # iTerm2 Settings
-            defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-            defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iterm2"
-            defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+			# iTerm2 Settings
+			defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+			defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iterm2"
+			defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
-            if [[ -d $WORK_DIR ]]; then
-                echo "Work directory already exists."
-            else
-                echo "Creating work directory."
-                mkdir -p $WORK_DIR
-            fi
+			if [[ -d $WORK_DIR ]]; then
+					echo "Work directory already exists."
+			else
+					echo "Creating work directory."
+					mkdir -p $WORK_DIR
+			fi
 
-            # Finish macOS Setup
-            killall Finder
-            killall Dock
-            echo "macOS Setup Complete, A logout or restart might be necessary."
-            break
-            ;;
-        n)
-            echo "Skipping macOS Setup."
-            exit 0
-            ;;
-        *)
-            echo "Invalid input. Please enter 'y' or 'n'."
-            ;;
+			# Finish macOS Setup
+			killall Finder
+			killall Dock
+			echo "macOS Setup Complete, A logout or restart might be necessary."
+			break
+			;;
+    n)
+			echo "Skipping macOS Setup."
+			exit 0
+			;;
+    *)
+			echo "Invalid input. Please enter 'y' or 'n'."
+			;;
     esac
 done

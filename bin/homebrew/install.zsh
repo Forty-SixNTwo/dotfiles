@@ -10,12 +10,12 @@
 ##  ..:::::..:::.......:::..:::::..::........::........:::..:::::..::........:::...::...:::
 ##  #######################################################################################
 
-EXTENSIONS=$HOME/.dotfiles/bin/homebrew/vscode_extensions
 BREWFILE=$HOME/.dotfiles/bin/homebrew/Brewfile
+EXTENSIONS=$HOME/.dotfiles/bin/homebrew/vscode_extensions
 
 while true; do
 	echo "Preparing to install Homebrew packages, would you like to proceed (y/n)?"
-
+	
 	read choice
 
 	case $choice in
@@ -23,9 +23,9 @@ while true; do
 			echo "Starting homebrew installation."
 			
 			if command -v brew >/dev/null 2>&1; then
-				echo "brew exists, skipping install"
+				echo "Homebrew is already installed, skipping installation."
 			else
-				echo "brew doesn't exist, continuing with install"
+				echo "Installing Homebrew."
 				/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 			fi
 

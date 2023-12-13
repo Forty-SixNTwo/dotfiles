@@ -11,3 +11,4 @@
 ##  ###############################################################
 
 python3 -m pip install psutil
+echo "Global Python Packages Installed:"

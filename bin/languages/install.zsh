@@ -125,8 +125,8 @@ while true; do
         read version
           
         if [[ -z "$version" ]]; then
-          asdf install java latest
-          asdf global java latest
+          asdf install java latest:adoptopenjdk-11
+          asdf global java latest:adoptopenjdk-11
         else
           asdf install java $version
           asdf global java $version

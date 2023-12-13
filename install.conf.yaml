@@ -5,6 +5,8 @@
 - clean: ['~']
 
 - link:
+    ~/.asdfrc:
+      path: ./source/asdfrc
     ~/.zshrc:
       path: ./source/zshrc
     ~/.gitconfig:
