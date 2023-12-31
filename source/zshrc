@@ -13,6 +13,7 @@
 # Variables
 export DOTFILES=$HOME/.dotfiles
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
+export HOMEBREW_NO_ENV_HINTS=1
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=5000 
@@ -72,6 +73,7 @@ path=(
   $path
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   "/Users/fortysix-ntwo/Library/Python/3.9/bin"
+  "/usr/local/sbin:$PATH"
 )
 
 # Functions
