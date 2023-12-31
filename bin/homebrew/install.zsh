@@ -43,7 +43,7 @@ while true; do
 			chmod -R go-w "$(brew --prefix)/share"
 
 			# spacebar
-			brew services start spacebar
+			# brew services start spacebar
 
 			# Update
 			brew update --verbose

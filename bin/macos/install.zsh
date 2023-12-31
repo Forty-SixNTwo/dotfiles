@@ -45,10 +45,13 @@ while true; do
 			# Third-Party Software
 
 			# iTerm2 Settings
+			curl -sS https://raw.githubusercontent.com/eieioxyz/dotfiles_macos/master/iterm2/com.googlecode.iterm2.plist -o $HOME/.dotfiles/source/iterm2/com.googlecode.iterm2.plist
 			defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-			defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iterm2"
+			defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/source/iterm2"
 			defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
+			sudo /usr/sbin/DevToolsSecurity -enable
+			sudo dscl . append /Groups/_developer GroupMembership $(whoami)
 			if [[ -d $WORK_DIR ]]; then
 					echo "Work directory already exists."
 			else

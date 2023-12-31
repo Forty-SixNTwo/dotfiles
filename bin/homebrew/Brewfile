@@ -7,7 +7,7 @@
 ##   ########:: ##:::. ##: ########:. ###. ###:: ##:::::::'####: ########: ########:
 ##  ........:::..:::::..::........:::...::...:::..::::::::....::........::........::
 ##  ################################################################################
-
+,
 # Homebrew Bundles
 # ----------------
 
@@ -18,9 +18,44 @@ tap "homebrew/cask-versions"
 tap "corgibytes/cask-fonts"
 tap "dracula/install"
 
-# Homebrew Packages
+# Languages
 # -----------------
 
+# Python
+brew "python"
+# JS/TS
+brew "node"
+brew "pnpm"
+brew "deno"
+brew "typescript"
+brew "typescript-language-server"
+# Ruby
+brew "ruby"
+# Go
+brew "go"
+brew "gopls"
+brew "gotests"
+brew "gomodifytags"
+brew "delve"
+brew "staticcheck"
+# Rust
+brew "rust"
+# Java
+brew "java"
+# Scala
+brew "scala"
+# Clojure
+brew "clojure"
+# Kotlin
+brew "kotlin"
+brew "xcode-kotlin"
+# Swift
+brew "swift"
+
+# Homebrew Packages
+# -----------------
+# Kubernetes CLI
+brew "k9s"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Modern replacement for 'ls'
@@ -85,6 +120,8 @@ brew "osx-cpu-temp"
 brew "dracula/install/dracula-git"
 # set macOS file icons programatically
 brew "fileicon"
+# Push notifications for macOS
+brew "ntfy"
 
 # Applications
 # ------------
@@ -117,6 +154,8 @@ cask "dracula-macos-color-picker"
 cask "dracula-xcode"
 # Github next Monaspace font
 cask "font-monaspace"
+# API testing tool
+cask "insomnia"
 
 # Fonts
 # -----
