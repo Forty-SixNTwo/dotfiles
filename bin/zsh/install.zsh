@@ -10,9 +10,10 @@
 ##  ........:::......:::..:::::..::
 ###################################
 
-ASDF=$HOME/.asdf
 OH_MY_ZSH=$HOME/.oh-my-zsh
 OH_MY_ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+FZF=$HOME/.fzf.zsh
+BASHTOP=$HOME/.bashtop
 
 while true; do
 
@@ -66,21 +67,14 @@ while true; do
       git clone https://github.com/zsh-users/zsh-autosuggestions $OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions
     fi
 
-    if [[ -d $ASDF ]]; then
-      echo "asdf is allready installed at $ASDF"
-    else
-      echo "Installing asdf to $ASDF"
-      git clone https://github.com/asdf-vm/asdf.git $ASDF
-    fi
-
-    if [[ -d "$HOME/.fzf.zsh" ]]; then
+    if [[ -d $FZF ]]; then
       echo "fzf completions already installed"
     else
       echo "Installing fzf completions"
       $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
     fi
 
-    if [[ -d "$HOME/.bashtop" ]]; then
+    if [[ -d $BASHTOP ]]; then
       echo "bashtop already installed"
     else
       git clone https://github.com/aristocratos/bashtop.git $HOME/.bashtop

@@ -10,9 +10,15 @@
 ##  :::...:::::..:::::..::..:::::..::....::..:::::..::........:::........::........::
 ##  #################################################################################
 
+export ALIAS_ZSH=$DOTFILES/source/zsh/alias.zsh
+export PATH_ZSH=$DOTFILES/source/zsh/path.zsh
+export FUNCTION_ZSH=$DOTFILES/source/zsh/function.zsh
+
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 
 export HOMEBREW_NO_ENV_HINTS=true
+
+export NULLCMD=bat
 
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=$HOME/.zsh_history

@@ -35,10 +35,10 @@ while true; do
 
       if [[ -z "$version" ]]; then
 
-        source $NODE
+        . $NODE
       else
 
-        source $NODE
+        . $NODE
       fi
     fi
 
@@ -73,10 +73,10 @@ while true; do
 
       if [[ -z "$version" ]]; then
 
-        source $RUBY
+        . $RUBY
       else
 
-        source $RUBY
+        . $RUBY
       fi
     fi
 
@@ -129,10 +129,10 @@ while true; do
 
       if [[ -z "$version" ]]; then
 
-        source $PYTHON
+        . $PYTHON
       else
 
-        source $PYTHON
+        . $PYTHON
       fi
     fi
     break

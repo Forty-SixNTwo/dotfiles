@@ -12,11 +12,8 @@
 
 # Variables
 export DOTFILES=$HOME/.dotfiles
-export ALIAS_ZSH=$DOTFILES/source/zsh/alias.zsh
-export PATH_ZSH=$DOTFILES/source/zsh/path.zsh
-export FUNCTION_ZSH=$DOTFILES/source/zsh/function.zsh
 export VARIABLE_ZSH=$DOTFILES/source/zsh/variable.zsh
-source $VARIABLE_ZSH
+. $VARIABLE_ZSH
 
 # Oh My ZSH
 ZSH_THEME="dracula"
@@ -27,9 +24,9 @@ plugins=(
   zsh-autosuggestions
 )
 
-source $ZSH_SH
-source $ZSH_SYNTAX_HIGHLIGHTING
-source $COLORLS
+. $ZSH_SH
+. $ZSH_SYNTAX_HIGHLIGHTING
+. $COLORLS
 
 # Adjust History Variables & Options
 unsetopt APPEND_HISTORY
@@ -46,13 +43,13 @@ setopt NOTIFY
 setopt CORRECT
 
 # Aliases
-source $ALIAS_ZSH
+. $ALIAS_ZSH
 
 # Paths
-source $PATH_ZSH
+. $PATH_ZSH
 
 # Functions
-source $FUNCTION_ZSH
+. $FUNCTION_ZSH
 
 # Plugins
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -68,4 +65,4 @@ eval "$(starship init zsh)"
 
 eval $(thefuck --alias)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
