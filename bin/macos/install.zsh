@@ -66,6 +66,10 @@ while true; do
 			mkdir -p $WORK_DIR
 		fi
 
+		/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -seed -r -domain local -domain system -domain user && killall Finde
+		command find -- . ! -path '*/.*' -type d -exec chmod -- 755 '{}' '+'
+		command find -- . ! -path '*/.*' -type f -exec chmod -- 644 '{}' '+'
+
 		# Finish macOS Setup
 		killall Finder
 		killall Dock
