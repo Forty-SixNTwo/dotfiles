@@ -7,6 +7,8 @@
 - link:
     ~/.zshrc:
       path: ./source/zshrc
+    ~/.zshenv:
+      path: ./source/zshenv
     ~/.gitconfig:
       path: ./source/gitconfig
     ~/.hyper.js:

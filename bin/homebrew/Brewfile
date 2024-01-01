@@ -7,7 +7,7 @@
 ##   ########:: ##:::. ##: ########:. ###. ###:: ##:::::::'####: ########: ########:
 ##  ........:::..:::::..::........:::...::...:::..::::::::....::........::........::
 ##  ################################################################################
-,
+
 # Homebrew Bundles
 # ----------------
 
@@ -19,7 +19,7 @@ tap "corgibytes/cask-fonts"
 tap "dracula/install"
 
 # Languages
-# -----------------
+# ---------
 
 # Python
 brew "python"
@@ -54,6 +54,7 @@ brew "swift"
 
 # Homebrew Packages
 # -----------------
+
 # Kubernetes CLI
 brew "k9s"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -126,36 +127,49 @@ brew "ntfy"
 # Applications
 # ------------
 
-# macOS manager.
+# GPU-accelerated terminal emulator
+cask "alacritty"
+# Application launcher and productivity software
 cask "alfred"
-# Cloud storage
-cask "dropbox"
-# Docker
+# App to build and share containerized applications and microservices
 cask "docker"
-# Git client 
+# Dark theme for Alfred
+cask "dracula-alfred"
+# Dark theme for GitKraken
+cask "dracula-gitkraken"
+# Dark theme for the native Color Picker
+cask "dracula-macos-color-picker"
+# Dark theme for Xcode
+cask "dracula-xcode"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
+cask "font-covered-by-your-grace"
+# Free monospaced font with programming ligatures
+cask "font-fira-code"
+cask "font-hack"
+# Revival of an old classic, Alternate Gothic #1
+cask "font-league-gothic"
+# Superfamily of fonts for code
+cask "font-monaspace"
+cask "font-share-tech"
+# Git client focusing on productivity
 cask "gitkraken"
 # Web browser
 cask "google-chrome"
-# Terminal emulator
+# Terminal built on web technologies
 cask "hyper"
-# Terminal emulator
-cask "iterm2"
-# Text editor
-cask "visual-studio-code"
-# Media player
-cask "vlc"
-# gitkraken theme
-cask "dracula-gitkraken"
-# alfred theme
-cask "dracula-alfred"
-# color picker theme
-cask "dracula-macos-color-picker"
-# xcode theme
-cask "dracula-xcode"
-# Github next Monaspace font
-cask "font-monaspace"
-# API testing tool
+# HTTP and GraphQL Client
 cask "insomnia"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Web browser
+cask "microsoft-edge"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 
 # Fonts
 # -----
@@ -164,3 +178,32 @@ cask "font-covered-by-your-grace"
 cask "font-hack"
 cask "font-league-gothic"
 cask "font-share-tech"
+
+# VSCode Extensions
+# -----------------
+
+vscode "amazonwebservices.codewhisperer-for-command-line-companion"
+vscode "be5invis.toml"
+vscode "be5invis.vscode-icontheme-nomo-dark"
+vscode "DavidAnson.vscode-markdownlint"
+vscode "dracula-theme-pro.theme-dracula-pro"
+vscode "eamodio.gitlens"
+vscode "emmanuelbeziat.vscode-great-icons"
+vscode "foxundermoon.shell-format"
+vscode "GitHub.copilot"
+vscode "GitHub.copilot-chat"
+vscode "golang.go"
+vscode "hashicorp.terraform"
+vscode "mads-hartmann.bash-ide-vscode"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-vscode-remote.remote-containers"
+vscode "Nimda.deepdark-material"
+vscode "PKief.material-icon-theme"
+vscode "qinjia.seti-icons"
+vscode "samuelcolvin.jinjahtml"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "tal7aouy.icons"
+vscode "teabyii.ayu"
+vscode "timonwong.shellcheck"
+vscode "vscode-icons-team.vscode-icons"
+vscode "waifuproject.icns-preview"

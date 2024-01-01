@@ -11,56 +11,52 @@
 ##  #######################################################################################
 
 BREWFILE=$HOME/.dotfiles/bin/homebrew/Brewfile
-EXTENSIONS=$HOME/.dotfiles/bin/homebrew/vscode_extensions
 
 while true; do
 	echo "Preparing to install Homebrew packages, would you like to proceed (y/n)?"
-	
+
 	read choice
 
 	case $choice in
-		y)
-			echo "Starting homebrew installation."
-			
-			if command -v brew >/dev/null 2>&1; then
-				echo "Homebrew is already installed, skipping installation."
-			else
-				echo "Installing Homebrew."
-				/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-			fi
+	y)
+		echo "Starting homebrew installation."
 
-			# Install all packages in Brewfile
-			brew bundle --verbose --file=$BREWFILE
+		if exists brew; then
+			echo "Homebrew is already installed, skipping installation."
+		else
+			echo "Installing Homebrew."
+			/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		fi
 
-			# Set Root permissions
-			sudo xcodebuild -license accept
-			sudo xcodebuild -runFirstLaunch
+		# Install all packages in Brewfile
+		brew bundle --verbose --file=$BREWFILE
 
-			# Install VSCode extensions
-			cat $EXTENSIONS | xargs -L 1 code --install-extension
+		# Set Root permissions
+		sudo xcodebuild -license accept
+		sudo xcodebuild -runFirstLaunch
 
-			# Set permissions
-			chmod -R go-w "$(brew --prefix)/share"
+		# Set permissions
+		chmod -R go-w "$(brew --prefix)/share"
 
-			# spacebar
-			# brew services start spacebar
+		# spacebar
+		# brew services start spacebar
 
-			# Update
-			brew update --verbose
+		# Update
+		brew update --verbose
 
-			# Upgrade
-			brew upgrade --verbose
+		# Upgrade
+		brew upgrade --verbose
 
-			# Cleanup
-			brew cleanup --verbose
-			break
-			;;
-		n)
-			echo "Skipping Homebrew installation."
-			exit 0
-			;;
-		*)
-			echo "Invalid input. Please enter 'y' or 'n'."
-			;;
+		# Cleanup
+		brew cleanup --verbose
+		break
+		;;
+	n)
+		echo "Skipping Homebrew installation."
+		exit 0
+		;;
+	*)
+		echo "Invalid input. Please enter 'y' or 'n'."
+		;;
 	esac
 done
