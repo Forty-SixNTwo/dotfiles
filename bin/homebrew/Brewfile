@@ -17,6 +17,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "corgibytes/cask-fonts"
 tap "dracula/install"
+tap "bell-sw/liberica"
 
 # Languages
 # ---------
@@ -51,6 +52,12 @@ brew "kotlin"
 brew "xcode-kotlin"
 # Swift
 brew "swift"
+# Lua
+brew "lua"
+brew "luajit"
+# Elixir
+brew "elixir"
+
 
 # Homebrew Packages
 # -----------------
@@ -123,6 +130,8 @@ brew "dracula/install/dracula-git"
 brew "fileicon"
 # Push notifications for macOS
 brew "ntfy"
+# text editor
+brew "neovim"
 
 # Applications
 # ------------
@@ -170,6 +179,8 @@ cask "microsoft-edge"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Java 17
+cask "liberica-jdk17-full"
 
 # Fonts
 # -----

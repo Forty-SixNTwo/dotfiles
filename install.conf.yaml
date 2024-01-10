@@ -7,55 +7,94 @@
 - link:
     ~/.zshrc:
       path: ./source/zshrc
+      relink: true
     ~/.zshenv:
       path: ./source/zshenv
+      relink: true
     ~/.gitconfig:
       path: ./source/gitconfig
+      relink: true
     ~/.hyper.js:
       path: ./source/hyper
+      relink: true
     ~/.nanorc:
       path: ./source/nanorc
+      relink: true
     ~/.mackup.cfg:
       path: ./source/mackup
+      relink: true
     ~/.config/bat:
       create: true
       path: ./source/bat
+      relink: true
     ~/.config/spacebar/spacebarrc:
       create: true
       execute: true
       path: ./source/spacebarrc
+      relink: true
     ~/.yabairc:
       execute: true
       path: ./source/yabairc
+      relink: true
     ~/.config/starship.toml:
       create: true
       path: ./source/starship
+      relink: true
     ~/.config/alacritty/alacritty.toml:
       create: true
       path: ./source/alacritty
+      relink: true
+
+- create:
+  - ~/workspace
 
 - shell:
     - command: ./bin/homebrew/install.zsh
+      description: Install Homebrew
+      quiet: true
+      execute: true
       stdout: true
       stderr: true
       stdin: true
     - command: ./bin/macos/install.zsh
+      description: Install macOS defaults
+      quiet: true
+      execute: true
       stdout: true
       stderr: true
       stdin: true
     - command: ./bin/zsh/install.zsh
+      description: Install Oh My Zsh
+      quiet: true
+      execute: true
       stdout: true
       stderr: true
       stdin: true
     - command: ./bin/languages/install.zsh
+      description: Install programming languages
+      quiet: true
+      execute: true
       stdout: true
       stderr: true
       stdin: true
     - command: ./bin/starship/install.zsh
+      description: Install Starship
+      quiet: true
+      execute: true
       stdout: true
       stderr: true
       stdin: true
     - command: ./bin/themes/install.zsh
+      description: Install themes
+      quiet: true
+      execute: true
+      stdout: true
+      stderr: true
+      stdin: true
+    - command: cleanup
+      description: Clean up environment
+      quiet: true
+      execute: true
       stdout: true
       stderr: true
       stdin: true

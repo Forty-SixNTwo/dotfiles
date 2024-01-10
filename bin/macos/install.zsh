@@ -39,9 +39,6 @@ while true; do
 		defaults write com.apple.dock autohide-time-modifier -float 0.25
 		defaults write com.apple.dock autohide-delay -float 0.1
 
-		# System Preferences > Accessibility > Pointer Control > Mouse & Trackpad > Trackpad Options > Enable Dragging > Three Finger Drag (NOTE: The GUI doesn't update)
-		defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
-
 		# System Preferences > Mission Control
 		defaults write com.apple.dock.plist wvous-bl-corner -int 4
 		defaults write com.apple.dock.plist wvous-tr-corner -int 2
@@ -66,9 +63,9 @@ while true; do
 			mkdir -p $WORK_DIR
 		fi
 
-		/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -seed -r -domain local -domain system -domain user && killall Finde
-		command find -- . ! -path '*/.*' -type d -exec chmod -- 755 '{}' '+'
-		command find -- . ! -path '*/.*' -type f -exec chmod -- 644 '{}' '+'
+		#	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -seed -r -domain local -domain system -domain user && killall Finde
+		#	command find -- . ! -path '*/.*' -type d -exec chmod -- 755 '{}' '+'
+		#	command find -- . ! -path '*/.*' -type f -exec chmod -- 644 '{}' '+'
 
 		# Finish macOS Setup
 		killall Finder
