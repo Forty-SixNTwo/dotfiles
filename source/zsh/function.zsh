@@ -10,6 +10,14 @@
 ##  ..:::::::::.......:::..::::..:::......::::::..:::::....:::.......:::..::::..::
 ##  ##############################################################################
 
+# Create a new directory and enter it
 function mkcd() {
   mkdir -p "$@" && cd "$_"
+}
+
+# Initialize Yabai
+function init_yabai() {
+  echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa"
+  yabai --start-service
+  skhd --start-service
 }

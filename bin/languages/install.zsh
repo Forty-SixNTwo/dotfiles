@@ -16,129 +16,24 @@ PYTHON=$HOME/.dotfiles/bin/languages/python.zsh
 
 while true; do
 
-  echo "Preparing to install programming languages, would you like to proceed (y/n)?"
+  echo "Preparing to install programming language modules and libraries, would you like to proceed (y/n)?"
 
   read choice
 
   case $choice in
   y)
-    # Install Node.JS
-    echo "Starting Node.JS installation."
+    echo "Installing Global Node Modules."
+    . $NODE
 
-    if exists node; then
-      echo "Node.js exists, skipping install"
-    else
+    echo "Installing Global Ruby Gems."
+    . $RUBY
 
-      echo "Input a version of Node.js to install, or press enter to install the latest version."
-
-      read version
-
-      if [[ -z "$version" ]]; then
-
-        . $NODE
-      else
-
-        . $NODE
-      fi
-    fi
-
-    # Install Go
-    echo "Starting Go installation."
-
-    if exists go; then
-      echo "Go exists, skipping install"
-    else
-
-      echo "Input a version of Go to install, or press enter to install the latest version."
-
-      read version
-
-      if [[ -z "$version" ]]; then
-
-      else
-
-      fi
-    fi
-
-    # Install Ruby
-    echo "Starting Ruby installation."
-
-    if exists ruby; then
-      echo "Ruby exists, skipping install"
-    else
-
-      echo "Input a version of Ruby to install, or press enter to install the latest version."
-
-      read version
-
-      if [[ -z "$version" ]]; then
-
-        . $RUBY
-      else
-
-        . $RUBY
-      fi
-    fi
-
-    # Install Rust
-    echo "Starting Rust installation."
-
-    if exists rustc; then
-      echo "Rust exists, skipping install"
-    else
-
-      echo "Input a version of Rust to install, or press enter to install the latest version."
-
-      read version
-
-      if [[ -z "$version" ]]; then
-
-      else
-
-      fi
-    fi
-
-    # Install Java
-    echo "Starting Java installation."
-
-    if exists java; then
-      echo "Java exists, skipping install"
-    else
-
-      echo "Input a version of Java to install, or press enter to install the latest version."
-
-      read version
-
-      if [[ -z "$version" ]]; then
-
-      else
-
-      fi
-    fi
-
-    # Install Python
-    echo "Starting Python installation."
-
-    if exists python3; then
-      echo "Python exists, skipping install"
-    else
-
-      echo "Input a version of Python to install, or press enter to install the latest version."
-
-      read version
-
-      if [[ -z "$version" ]]; then
-
-        . $PYTHON
-      else
-
-        . $PYTHON
-      fi
-    fi
+    echo "Installing Global Python Packages."
+    . $PYTHON
     break
     ;;
   n)
-    echo "Skipping programming languages."
+    echo "Skipping programming language modules and libraries."
     exit 0
     ;;
   *)

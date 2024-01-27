@@ -11,11 +11,13 @@
 ##  ####################################################
 
 # Variables
-export DOTFILES=$HOME/.dotfiles
-export VARIABLE_ZSH=$DOTFILES/source/zsh/variable.zsh
-. $VARIABLE_ZSH
+# ---------
+
+. $HOME/.dotfiles/source/zsh/variable.zsh
 
 # Oh My ZSH
+# ---------
+
 ZSH_THEME="dracula"
 
 plugins=(
@@ -43,15 +45,23 @@ setopt NOTIFY
 setopt CORRECT
 
 # Aliases
+# -------
+
 . $ALIAS_ZSH
 
 # Paths
+# -----
+
 . $PATH_ZSH
 
 # Functions
+# ---------
+
 . $FUNCTION_ZSH
 
 # Plugins
+# -------
+
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Load "New" Completion System
@@ -61,7 +71,12 @@ zstyle ':plugin:history-search-multi-word' clear-on-cancel 'yes'
 autoload -Uz compinit && compinit
 
 # prompt(s)
+# ---------
+
 eval "$(starship init zsh)"
+
+# Other
+# -----
 
 eval $(thefuck --alias)
 

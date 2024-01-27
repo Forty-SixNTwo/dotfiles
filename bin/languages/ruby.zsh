@@ -11,4 +11,4 @@
 ##  ###########################################
 
 gem install colorls
-echo "Global Ruby Packages Installed:"
+echo "Global Ruby Packages Installed."

@@ -90,7 +90,14 @@ disabled = false
 format = "via [$symbol$version]($style) "
 not_capable_style = "bold #f1fa8c"
 style = "bold #50fa7b"
-symbol = "⬢ "
+symbol = "🤖 "
+
+[golang]
+disabled = false
+format = "via [$symbol$version]($style) "
+not_capable_style = "bold #f1fa8c"
+style = "bold #50fa7b"
+symbol = "🐹 "
 
 [status]
 disabled = true

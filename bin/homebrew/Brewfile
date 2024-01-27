@@ -132,6 +132,10 @@ brew "fileicon"
 brew "ntfy"
 # text editor
 brew "neovim"
+# protocol buffers compiler
+brew "protobuf"
+# JSON processor
+brew "jq"
 
 # Applications
 # ------------
@@ -181,6 +185,9 @@ cask "visual-studio-code"
 cask "vlc"
 # Java 17
 cask "liberica-jdk17-full"
+# password manager
+cask "bitwarden"
+
 
 # Fonts
 # -----

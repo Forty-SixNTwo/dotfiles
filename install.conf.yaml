@@ -27,6 +27,11 @@
       create: true
       path: ./source/bat
       relink: true
+    ~/.config/skhd/skhdrc:
+      create: true
+      execute: true
+      path: ./source/skhdrc
+      relink: true
     ~/.config/spacebar/spacebarrc:
       create: true
       execute: true
@@ -71,7 +76,7 @@
       stderr: true
       stdin: true
     - command: ./bin/languages/install.zsh
-      description: Install programming languages
+      description: Install programming language tools
       quiet: true
       execute: true
       stdout: true
@@ -91,8 +96,8 @@
       stdout: true
       stderr: true
       stdin: true
-    - command: cleanup
-      description: Clean up environment
+    - command: ./bin/cleanup.zsh
+      description: Cleanup environment
       quiet: true
       execute: true
       stdout: true

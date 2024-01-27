@@ -10,15 +10,19 @@
 
 [include]
 path = ~/.gitconfig.local
+
 [url "https://github.com/dracula/"]
 insteadOf = dracula://
+
 [color]
 ui = auto
+
 [color "branch"]
 current = cyan bold reverse
 local = white
 plain =
 remote = cyan
+
 [color "diff"]
 commit =
 func = cyan
@@ -28,6 +32,7 @@ meta = white
 frag = cyan bold reverse
 old = red
 new = green
+
 [color "grep"]
 context =
 filename =
@@ -35,11 +40,13 @@ function = linenumber = white
 match =
 selected =
 separator =
+
 [color "interactive"]
 error =
 header =
 help =
 prompt =
+
 [color "status"]
 added = green
 changed = yellow
@@ -50,10 +57,13 @@ remoteBranch = cyan bold
 unmerged = magenta bold reverse
 untracked = red
 updated = green bold
+
 [user]
 email = 84645149+Forty-SixNTwo@users.noreply.github.com
 name = Forty-SixNTwo
+
 [core]
 pager = diff-so-fancy | less --tabs=4 -RFX
+
 [interactive]
 diffFilter = diff-so-fancy --patch
