@@ -72,12 +72,20 @@ autoload -Uz compinit && compinit
 
 # prompt(s)
 # ---------
-
-eval "$(starship init zsh)"
+if exists starship; then
+  eval "$(starship init zsh)"
+fi
 
 # Other
 # -----
+if exists fuck; then
+  eval $(thefuck --alias)
+fi
 
-eval $(thefuck --alias)
+if exists fzf; then
+  [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
+fi
 
-[ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
+if exists pyenv; then
+  eval "$(pyenv init --path)"
+fi

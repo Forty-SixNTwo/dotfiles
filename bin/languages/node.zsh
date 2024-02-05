@@ -10,9 +10,9 @@
 ##   ..::::..:::.......:::........:::........::...:::......::::......::
 ##  ###################################################################
 
-npm i -g typescript
-npm i -g trash-cli
-npm i -g pnpm
-npm i -g serverless
-npm list --global --depth=0
+pnpm i -g typescript
+pnpm i -g trash-cli
+pnpm i -g pnpm
+pnpm i -g serverless
+pnpm list --global --depth=0
 echo "Global NPM Modules Installed."

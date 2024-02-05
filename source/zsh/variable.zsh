@@ -49,3 +49,11 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+
+export PNPM_HOME="/Users/fortysix-ntwo/Library/pnpm"
+
+export CODE_HOME="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+export PYTHON_HOME="/Users/fortysix-ntwo/Library/Python/3.9/bin"
+
+export PATH_HOME="/usr/local/sbin:$PATH"

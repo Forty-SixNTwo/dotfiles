@@ -24,6 +24,7 @@ tap "bell-sw/liberica"
 
 # Python
 brew "python"
+brew "pyenv"
 # JS/TS
 brew "node"
 brew "pnpm"

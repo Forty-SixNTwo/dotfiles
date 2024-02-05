@@ -14,7 +14,8 @@ typeset -U path
 
 path=(
   $path
-  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-  "/Users/fortysix-ntwo/Library/Python/3.9/bin"
-  "/usr/local/sbin:$PATH"
+  $PNPM_HOME
+  $CODE_HOME
+  $PYTHON_HOME
+  $PATH_HOME
 )
