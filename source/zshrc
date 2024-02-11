@@ -12,12 +12,10 @@
 
 # Variables
 # ---------
-
 . $HOME/.dotfiles/source/zsh/variable.zsh
 
 # Oh My ZSH
 # ---------
-
 ZSH_THEME="dracula"
 
 plugins=(
@@ -46,22 +44,18 @@ setopt CORRECT
 
 # Aliases
 # -------
-
 . $ALIAS_ZSH
 
 # Paths
 # -----
-
 . $PATH_ZSH
 
 # Functions
 # ---------
-
 . $FUNCTION_ZSH
 
 # Plugins
 # -------
-
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Load "New" Completion System

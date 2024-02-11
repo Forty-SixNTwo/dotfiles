@@ -18,4 +18,5 @@ path=(
   $CODE_HOME
   $PYTHON_HOME
   $PATH_HOME
+  $PKL_HOME
 )

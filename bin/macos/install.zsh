@@ -21,6 +21,16 @@ while true; do
 	case $choice in
 	y)
 		echo "Starting macOS Setup."
+		# Instll PKL (Pickle) configuration lanaguage.
+		if exists pkl; then
+			echo "PKL already installed."
+		else
+			echo "Installing PKL."
+			curl -L -o pkl https://github.com/apple/pkl/releases/download/0.25.2/pkl-macos-amd64
+			chmod +x pkl
+			./pkl --version
+			sudo mv pkl $PKL_HOME
+		fi
 
 		osascript -e 'tell application "System Preferences" to quit'
 
@@ -62,10 +72,6 @@ while true; do
 			echo "Creating work directory."
 			mkdir -p $WORK_DIR
 		fi
-
-		#	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -seed -r -domain local -domain system -domain user && killall Finde
-		#	command find -- . ! -path '*/.*' -type d -exec chmod -- 755 '{}' '+'
-		#	command find -- . ! -path '*/.*' -type f -exec chmod -- 644 '{}' '+'
 
 		# Finish macOS Setup
 		killall Finder

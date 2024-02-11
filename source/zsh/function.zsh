@@ -21,3 +21,10 @@ function init_yabai() {
   yabai --start-service
   skhd --start-service
 }
+
+# Clear all file permissions
+function clear_permissions() {
+  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -seed -r -domain local -domain system -domain user && killall Finde
+  command find -- . ! -path '*/.*' -type d -exec chmod -- 755 '{}' '+'
+  command find -- . ! -path '*/.*' -type f -exec chmod -- 644 '{}' '+'
+}

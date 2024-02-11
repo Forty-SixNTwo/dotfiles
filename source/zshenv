@@ -12,12 +12,10 @@
 
 # Source
 # ------
-
 . $HOME/.cargo/env
 
 # Functions
 # ---------
-
 # assort existince of commands
 function exists() {
   command -v "$1" >/dev/null 2>&1

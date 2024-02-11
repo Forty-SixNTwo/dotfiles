@@ -57,3 +57,5 @@ export CODE_HOME="/Applications/Visual Studio Code.app/Contents/Resources/app/bi
 export PYTHON_HOME="/Users/fortysix-ntwo/Library/Python/3.9/bin"
 
 export PATH_HOME="/usr/local/sbin:$PATH"
+
+export PKL_HOME="/usr/local/bin/pkl"
