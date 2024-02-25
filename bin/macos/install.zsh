@@ -42,6 +42,8 @@ while true; do
 		defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/.dotfiles"
 
 		# System Preferences > Dock
+		defaults write com.apple.dock ResetLaunchPad -bool true
+		killall Dock
 		defaults write com.apple.dock magnification -bool true
 		defaults write com.apple.dock tilesize -int 45
 		defaults write com.apple.dock largesize -int 60

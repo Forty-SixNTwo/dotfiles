@@ -62,7 +62,10 @@ brew "elixir"
 
 # Homebrew Packages
 # -----------------
-
+# HTML rendering library
+brew "w3m"
+# Save setting and restore them for lunchpad organization
+brew "blacktop/tap/lporg"
 # Kubernetes CLI
 brew "k9s"
 # Clone of cat(1) with syntax highlighting and Git integration
