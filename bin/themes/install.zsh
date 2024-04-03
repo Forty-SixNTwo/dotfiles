@@ -65,13 +65,16 @@ while true; do
 		curl -sS https://raw.githubusercontent.com/dracula/coteditor/master/Dracula.cottheme -o $THEMES/Dracula.cottheme
 
 		# file icons
-		fileicon set "/Applications/Xcode.app" $ICONS/xcode.icns
-		fileicon set "/Applications/Visual Studio Code.app" $ICONS/vscode.icns
-		fileicon set "/Applications/Google Chrome.app" $ICONS/chrome.icns
-		fileicon set "/Applications/Slack.app" $ICONS/slack.icns
-		fileicon set "/Applications/Hyper.app" $ICONS/hyper.icns
-		fileicon set "/Applications/Sublime Text.app" $ICONS/sublime.icns
-
+		sudo fileicon set "/Applications/Xcode.app" $ICONS/xcode.icns
+		sudo fileicon set "/Applications/Visual Studio Code.app" $ICONS/vscode.icns
+		sudo fileicon set "/Applications/Google Chrome.app" $ICONS/chrome.icns
+		sudo fileicon set "/Applications/Slack.app" $ICONS/slack.icns
+		sudo fileicon set "/Applications/Hyper.app" $ICONS/hyper.icns
+		sudo fileicon set "/Applications/Sublime Text.app" $ICONS/sublime.icns
+		sudo fileicon set "/Applications/MongoDB Compass.app" $ICONS/mongodb.icns
+		# sudo fileicon set "/Applications/Safari.app" $ICONS/safari.icns
+		sudo fileicon set "/Applications/Textastic.app" $ICONS/textastic.icns
+		sudo fileicon set "/Applications/MarkText.app" $ICONS/marktext.icns
 		break
 		;;
 	n)

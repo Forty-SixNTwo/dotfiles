@@ -135,6 +135,7 @@ brew "fileicon"
 # Push notifications for macOS
 brew "ntfy"
 # text editor
+brew "vim"
 brew "neovim"
 # protocol buffers compiler
 brew "protobuf"
@@ -143,7 +144,8 @@ brew "jq"
 
 # Applications
 # ------------
-
+# Brightness control
+cask "MonitorControl"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software

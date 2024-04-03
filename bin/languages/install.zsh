@@ -22,6 +22,13 @@ while true; do
 
   case $choice in
   y)
+    if exists "bun"; then
+      echo "Bun.js runtime is already installed, skipping installation."
+    else
+      echo "Installing Bun.js runtime."
+      curl -fsSL https://bun.sh/install | bash
+      exec /usr/local/bin/zsh
+    fi
     echo "Installing Global Node Modules."
     . $NODE
 

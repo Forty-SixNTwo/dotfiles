@@ -83,3 +83,10 @@ fi
 if exists pyenv; then
   eval "$(pyenv init --path)"
 fi
+
+# bun completions
+[ -s "/Users/fortysix-ntwo/.bun/_bun" ] && source "/Users/fortysix-ntwo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
