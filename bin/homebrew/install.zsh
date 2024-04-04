@@ -49,6 +49,9 @@ while true; do
 
 		# Cleanup
 		brew cleanup --verbose
+
+		# Remove all outdated versions
+		brew cu --all --cleanup --yes
 		break
 		;;
 	n)

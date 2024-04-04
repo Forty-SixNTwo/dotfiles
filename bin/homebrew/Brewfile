@@ -10,27 +10,34 @@
 
 # Homebrew Bundles
 # ----------------
-
-tap "eth-p/software"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
+tap "buo/cask-upgrade"
+tap "bell-sw/liberica"
+tap "blacktop/tap"
+tap "cmacrae/formulae"
 tap "corgibytes/cask-fonts"
 tap "dracula/install"
-tap "bell-sw/liberica"
+tap "eth-p/software"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "koekeishiya/formulae"
 
 # Languages
 # ---------
-
 # Python
 brew "python"
 brew "pyenv"
+brew "uv"
 # JS/TS
 brew "node"
 brew "pnpm"
 brew "deno"
 brew "typescript"
 brew "typescript-language-server"
+brew "vite"
 # Ruby
 brew "ruby"
 # Go
@@ -62,172 +69,170 @@ brew "elixir"
 
 # Homebrew Packages
 # -----------------
-# HTML rendering library
-brew "w3m"
-# Save setting and restore them for lunchpad organization
-brew "blacktop/tap/lporg"
-# Kubernetes CLI
-brew "k9s"
-# Clone of cat(1) with syntax highlighting and Git integration
+brew "xz"
+brew "jpeg-xl"
+brew "aom"
+brew "openssl@3"
+brew "bash"
 brew "bat"
-# Modern replacement for 'ls'
-brew "eza"
-# Fuzzy finder for your terminal
-brew "fzf"
-# git diff, but with prettier output
-brew "diff-so-fancy"
-# Corrects previous command
-brew "thefuck"
-# Docker manager
-brew "lazydocker"
-# Git Manager
-brew "lazygit"
-# a grep replacment
-brew "ripgrep"
-# find entries in file-system
-brew "fd"
-# shell history
-brew "mcfly"
-# Excel spreadsheet
-brew "sc-im"
-# Midnight Commander file explorar
-brew "mc"
-# command-line HTTP client
+brew "bzip2"
+brew "readline"
+brew "sqlite"
+brew "python@3.12"
+brew "harfbuzz"
+brew "openjdk"
+brew "clojure"
+brew "coreutils"
 brew "curl"
-# Distributed revision control system
-brew "git"
-# User-friendly cURL replacement
-brew "httpie"
-# Pager program similar to more
-brew "less"
-# Keep your Mac's application settings in sync
-brew "mackup"
-# Mac App Store command-line interface
-brew "mas"
-# Free (GNU) replacement for the Pico text editor
-brew "nano"
-# UNIX shell (command interpreter)
-brew "zsh"
-# Bash scripts that integrate bat with various command-line tools
-brew "eth-p/software/bat-extras"
-# Window manager 
-brew "koekeishiya/formulae/yabai"
-# HotKey daemon
-brew "koekeishiya/formulae/skhd"
-# Minimal status bar
-brew "cmacrae/formulae/spacebar"
-# ASCII text art
+brew "delve"
+brew "deno"
+brew "diff-so-fancy"
+brew "elixir"
+brew "eza"
+brew "fd"
 brew "figlet"
-# ASCII text art
-brew "toilet"
-# Shell 
-brew "bash" 
-# Utilities
-brew "coreutils" 
-# non-interactive command-line text editor
-brew "gnu-sed" 
-# Outputs current CPU temperature
-brew "osx-cpu-temp"
-# Dracula themed wallpapers
-brew "dracula/install/dracula-git"
-# set macOS file icons programatically
 brew "fileicon"
-# Push notifications for macOS
-brew "ntfy"
-# text editor
-brew "vim"
-brew "neovim"
-# protocol buffers compiler
-brew "protobuf"
-# JSON processor
+brew "fzf"
+brew "gawk"
+brew "openjpeg"
+brew "git"
+brew "gnu-sed"
+brew "gnupg"
+brew "go"
+brew "gomodifytags"
+brew "gopls"
+brew "gotests"
+brew "httpie"
+brew "imagemagick"
 brew "jq"
+brew "k9s"
+brew "kotlin"
+brew "lazydocker"
+brew "lazygit"
+brew "less"
+brew "luajit"
+brew "mackup"
+brew "mas"
+brew "mcfly"
+brew "midnight-commander"
+brew "nano"
+brew "neovim"
+brew "node"
+brew "ntfy"
+brew "osx-cpu-temp"
+brew "pnpm"
+brew "protobuf"
+brew "pyenv"
+brew "python@3.11"
+brew "ripgrep"
+brew "ruby"
+brew "rust"
+brew "sc-im"
+brew "scala"
+brew "staticcheck"
+brew "swift"
+brew "thefuck"
+brew "toilet"
+brew "typescript"
+brew "typescript-language-server"
+brew "uv"
+brew "vim"
+brew "vite"
+brew "w3m"
+brew "xcode-kotlin"
+brew "zlib"
+brew "zsh"
+brew "blacktop/tap/lporg"
+brew "cmacrae/formulae/spacebar"
+brew "dracula/install/dracula-git"
+brew "eth-p/software/bat-extras"
+brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai"
 
 # Applications
 # ------------
-# Brightness control
-cask "MonitorControl"
-# GPU-accelerated terminal emulator
 cask "alacritty"
-# Application launcher and productivity software
 cask "alfred"
-# App to build and share containerized applications and microservices
-cask "docker"
-# Dark theme for Alfred
-cask "dracula-alfred"
-# Dark theme for GitKraken
-cask "dracula-gitkraken"
-# Dark theme for the native Color Picker
-cask "dracula-macos-color-picker"
-# Dark theme for Xcode
-cask "dracula-xcode"
-# Client for the Dropbox cloud storage service
-cask "dropbox"
-cask "font-covered-by-your-grace"
-# Free monospaced font with programming ligatures
-cask "font-fira-code"
-cask "font-hack"
-# Revival of an old classic, Alternate Gothic #1
-cask "font-league-gothic"
-# Superfamily of fonts for code
-cask "font-monaspace"
-cask "font-share-tech"
-# Git client focusing on productivity
-cask "gitkraken"
-# Web browser
-cask "google-chrome"
-# Terminal built on web technologies
-cask "hyper"
-# HTTP and GraphQL Client
-cask "insomnia"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
-# Web browser
-cask "microsoft-edge"
-# Open-source code editor
-cask "visual-studio-code"
-# Multimedia player
-cask "vlc"
-# Java 17
-cask "liberica-jdk17-full"
-# password manager
 cask "bitwarden"
-
+cask "brave-browser"
+cask "docker"
+cask "dracula-alfred"
+cask "dracula-gitkraken"
+cask "dracula-macos-color-picker"
+cask "dracula-mailspring"
+cask "dracula-xcode"
+cask "dropbox"
+cask "gitkraken"
+cask "google-chrome"
+cask "hyper"
+cask "icons8"
+cask "insomnia"
+cask "iterm2"
+cask "liberica-jdk17-full"
+cask "microsoft-auto-update"
+cask "microsoft-edge"
+cask "monitorcontrol"
+cask "visual-studio-code"
+cask "vlc"
 
 # Fonts
 # -----
-
 cask "font-covered-by-your-grace"
+cask "font-fira-code"
 cask "font-hack"
 cask "font-league-gothic"
+cask "font-monaspace"
 cask "font-share-tech"
 
 # VSCode Extensions
 # -----------------
-
+vscode "alefragnani.project-manager"
+vscode "almenon.arepl"
 vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "be5invis.toml"
 vscode "be5invis.vscode-icontheme-nomo-dark"
-vscode "DavidAnson.vscode-markdownlint"
+vscode "christian-kohler.npm-intellisense"
+vscode "codezombiech.gitignore"
+vscode "davidanson.vscode-markdownlint"
+vscode "dbaeumer.vscode-eslint"
+vscode "donjayamanne.git-extension-pack"
+vscode "donjayamanne.githistory"
+vscode "donjayamanne.python-environment-manager"
 vscode "dracula-theme-pro.theme-dracula-pro"
 vscode "eamodio.gitlens"
 vscode "emmanuelbeziat.vscode-great-icons"
 vscode "foxundermoon.shell-format"
-vscode "GitHub.copilot"
-vscode "GitHub.copilot-chat"
+vscode "github.copilot"
+vscode "github.copilot-chat"
 vscode "golang.go"
 vscode "hashicorp.terraform"
+vscode "kevinrose.vsc-python-indent"
 vscode "mads-hartmann.bash-ide-vscode"
+vscode "miguelsolorio.fluent-icons"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.black-formatter"
+vscode "ms-python.debugpy"
+vscode "ms-python.flake8"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
 vscode "ms-vscode-remote.remote-containers"
-vscode "Nimda.deepdark-material"
-vscode "PKief.material-icon-theme"
+vscode "ms-vscode.makefile-tools"
+vscode "nimda.deepdark-material"
+vscode "oderwat.indent-rainbow"
+vscode "pkief.material-icon-theme"
+vscode "pkl.pkl-vscode"
 vscode "qinjia.seti-icons"
 vscode "samuelcolvin.jinjahtml"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "tal7aouy.icons"
 vscode "teabyii.ayu"
+vscode "thang-nm.catppuccin-perfect-icons"
 vscode "timonwong.shellcheck"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vscode-icons-team.vscode-icons"
 vscode "waifuproject.icns-preview"
+vscode "wallabyjs.quokka-vscode"
+vscode "wholroyd.jinja"
+vscode "ziyasal.vscode-open-in-github"
+vscode "zxh404.vscode-proto3"

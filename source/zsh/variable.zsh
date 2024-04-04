@@ -44,11 +44,11 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclu
 
 export COLORLS=$(dirname $(gem which colorls))/tab_complete.sh
 
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/sqlite/lib"
 
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/readline/include -I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/sqlite/include"
 
-export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:/usr/local/opt/readline/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:/usr/local/opt/bzip2/lib/pkgconfig:/usr/local/opt/sqlite/lib/pkgconfig"
 
 export PNPM_HOME="/Users/fortysix-ntwo/Library/pnpm"
 
