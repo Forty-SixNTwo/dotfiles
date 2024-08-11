@@ -24,7 +24,6 @@ function exists() {
 # clean up environment
 function cleanup() {
   trash_developer='1'
-  cd /usr/local/Homebrew && git stash -u && git clean -d -f
   command sleep 1
   set -o xtrace
   trash_date="$(command date -u -- '+%Y%m%d')"_"$(command awk -- 'BEGIN {srand(); print srand()}')" \ 
